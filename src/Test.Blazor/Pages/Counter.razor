@@ -1,0 +1,18 @@
+﻿@page "/counter"
+@using Bdaya.Net.Blazor.FileUplodar
+<h1>Counter</h1>
+`
+<p>Current count: @currentCount</p>
+
+<Bdaya.Net.Blazor.FileUplodar.FileUploader></Bdaya.Net.Blazor.FileUplodar.FileUploader>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
