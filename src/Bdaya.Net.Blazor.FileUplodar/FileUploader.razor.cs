@@ -17,11 +17,12 @@ namespace Bdaya.Net.Blazor.FileUplodar
         [Parameter] public string Width { get; set; } = "100%";
         [Parameter] public string Height { get; set; } = "15rem";
 
+        [Parameter] public string DefaultImage { get; set; } = "https://www.chinkung.org/wp-content/themes/consultix/images/no-image-found-360x250.png";
 
         private Guid _id = Guid.NewGuid();
 
 
-        public string Image { get; set; }
+        [Parameter] public string Image { get; set; }
 
         private async Task UploadFile(InputFileChangeEventArgs e)
         {
