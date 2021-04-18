@@ -29,7 +29,7 @@ namespace Bdaya.Net.Blazor.FileUplodar
         private async Task UploadFiles(InputFileChangeEventArgs e)
         {
             var res = await UploadToFileServer.Invoke(e);
-            if (!res.Any())
+            if (res.Any())
             {
                 Images.AddRange(res);
                 await OnUpload.InvokeAsync(Images);
@@ -52,7 +52,7 @@ namespace Bdaya.Net.Blazor.FileUplodar
             {
                 return false;
             }
-            return Index >= Images.Count;
+            return Index < (Images.Count - 1);
         }
 
         private bool CanDelete()
